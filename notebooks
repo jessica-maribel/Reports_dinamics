@@ -1,0 +1,73 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNuGslAQXOnep8hU7+NOIZ0",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jessica-maribel/Reports_dinamics/blob/main/notebooks\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "3LYrPqn3VaSL"
+      },
+      "outputs": [],
+      "source": [
+        "import pandas as pd"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Cargar el archivo Excel\n",
+        "archivo_excel = 'ubicaciones.xlsx'  # Reemplaza con la ruta de tu archivo\n",
+        "hoja = 'Hoja1'  # Nombre de la hoja, si es necesario especificarlo\n",
+        "\n",
+        "# Leer los datos en un DataFrame\n",
+        "df = pd.read_excel(archivo_excel, sheet_name=hoja)\n",
+        "\n",
+        "# Eliminar duplicados basados solo en una columna\n",
+        "# Sustituye 'nombre_columna' por el nombre de la columna que deseas limpiar de duplicados\n",
+        "df_sin_duplicados = df.drop_duplicates(subset=['Ubicación'])\n",
+        "\n",
+        "# Guardar el DataFrame\n",
+        "df_sin_duplicados.to_excel('locations.xlsx', index=False)"
+      ],
+      "metadata": {
+        "id": "w3GN5Rt8VlAp"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "8-lFixIQVzsX"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
